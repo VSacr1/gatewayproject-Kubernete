@@ -8,7 +8,7 @@ As a user you can register for an account online. Once you have registered you s
 
 # 1. Architecture 
 
-INSERT DIAGRAM HERE
+![Server diagram](/Server diagram.xml)
 
 From the diagram above we can see how each of the docker files communicate with each other. 
 
