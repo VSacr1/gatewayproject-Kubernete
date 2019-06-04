@@ -1,0 +1,102 @@
+version: '3.3'
+services:
+  gateway:
+    image: nginx:latest 
+    volumes:
+      - type: bind
+        source: ./gateway/nginx.conf
+        target: /etc/nginx/nginx.conf
+    ports: 
+      - target: 80
+        published: 80
+        protocol: tcp
+    container_name: gateway
+    depends_on:
+      - dashboard-client
+      - dashboard-service
+      - authentication-client
+      - authentication-service    
+  authentication-client: 
+    build: ./authentication-client
+    image: vsacre/authenticationclient
+    container_name: authentication-client
+
+  dashboard-client:
+    build: ./dashboard-client
+    image: vsacre/dashboardclient
+    container_name: dashboard-client
+  
+  dashboard-service: 
+    build: ./dashboard-service
+    image: vsacre/dasboardservice
+    container_name: dashboard-service
+    depends_on: 
+    - account-service
+    - session-token-service
+  authentication-service:
+    build: ./authentication-service
+    image: vsacre/authenticationservice
+    container_name: authentication-service
+    environment: 
+      - ACTIVATION_LINK=http://${IP}/authentication/api/activate
+    depends_on: 
+      - account-service
+      - session-token-service
+      - email-service
+  account-service: 
+    build: ./account-service
+    image: vsacre/accountservice
+    container_name: account-service
+    depends_on:
+      - secret-service
+      - mongo-service
+  session-token-service: 
+    build: ./session-token-service
+    image: vsacre/sessiontokenservice
+    container_name: session-token-service
+    depends_on:
+      - aes-encryption-service
+      - mongo-service
+  aes-encryption-service:
+     build: ./aes-encryption-service
+     image: vsacre/aesencryptionservice
+     container_name: aes-encryption-service
+  secret-service: 
+     build: ./secret-service
+     image: vsacre/secretservice
+     container_name: secret-service
+     depends_on: 
+       - mongo-service
+  email-service: 
+    build: ./email-service
+    image: vsacre/emailservice
+    container_name: email-service
+    environment:
+       - GMAIL_USER=ilovedocker123@gmail.com
+       - GMAIL_PASS=ilovedocker1!
+       - SERVICE_NAME=emailer
+    depends_on: 
+      - mongo-service
+      - aes-encryption-service
+
+  mongo-service: 
+    build: ./mongo-service
+    image: vsacre/mongoservice
+    container_name: mongo-service
+    depends_on: 
+      - mongo 
+  mongo: 
+    image: mongo:latest
+    container_name: mongo
+  # volumes: 
+  #    - type: volume
+  #      source: persist
+  #      target: /data/db
+  role-service: 
+    build: ./role-service
+    container_name: role-service
+  group-service:
+    build: ./group-service
+    container_name: group-service
+    #volumes: 
+    # persist: 
