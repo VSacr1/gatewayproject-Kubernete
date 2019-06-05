@@ -62,13 +62,21 @@ Clients run on port 8080.
  * Nginx.conf - Web Server
 
  1. Create a kubenete cluster by opening gcloud console and writing gcloud container clusters name projectname --zone projectzone 
+ 
  2. Access kubenete cluster by typing gcloud container clusters get-credentials name projectname --zone projectzone
+ 
  3. Ensure the the kubenetes has enough nodes up and running by changing the amount of virtual machines. 
+ 
  4. Git clone project folder
+ 
  5. Deploy gateway service, deployment and conf-map.yaml file to get External IP address for step 5
+ 
  6. Change the IP in the authenticationservice-deployment file to the External IP of the gateway. 
+ 
  7. Deploy mongo-service service and deployment files 
+ 
  8. Repeat the step above for each of the file.  
+ 
  9. Once all the services and deployments are up and running go to http://gatewayexternalIP/authentication/register
 
 gatewayeternalIP should appear when searching kubectl get service
