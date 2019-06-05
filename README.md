@@ -57,13 +57,13 @@ Clients run on port 8080.
 * This communicates to the Mongo database
 
 # 2. How To Run
- Applications used
+ **Applications used**
  * Nodejs - Frontend
  * Vuejs - Frontend
  * MongoDB - Database 
  * Nginx.conf - Web Server
 
- Setup
+ **Setup**
  1. Create a kubenete cluster by opening gcloud console and writing gcloud container clusters name projectname --zone projectzone 
  
  2. Access kubenete cluster by typing gcloud container clusters get-credentials name projectname --zone projectzone
