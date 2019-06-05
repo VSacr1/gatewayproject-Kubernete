@@ -61,6 +61,7 @@ Clients run on port 8080.
  * MongoDB - Database 
  * Nginx.conf - Web Server
 
+ Setup
  1. Create a kubenete cluster by opening gcloud console and writing gcloud container clusters name projectname --zone projectzone 
  
  2. Access kubenete cluster by typing gcloud container clusters get-credentials name projectname --zone projectzone
