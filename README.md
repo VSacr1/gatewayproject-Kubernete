@@ -4,7 +4,7 @@
 2. [How To Run](#2-How-To-Run)
 
 # 0. Project Definition
-As a user you can register for an account online. Once you have registered you should recieve a confirmation email which will give you a hyperlink to activate your account; allowing you to log in to the dashboard via the login page. This was created using Docker-compose, npm and nginx. 
+As a user you can register for an account online. Once you have registered you should recieve a confirmation email which will give you a hyperlink to activate your account; allowing you to log in to the dashboard via the login page. This was created using Kubenetes, npm and nginx. 
 
 # 1. Architecture 
 
@@ -58,11 +58,17 @@ From the diagram above we can see how each of the docker files communicate with 
  * MongoDB
  * Nginx.conf
 
- 1. Make a new google cloud virtual machine and git clone this project. 
- 2. Change the .env file IP address to the ip of the virtual machine
- 3. Enter the folder with the cd command and run docker-compose -d up. This will build and compile all the docker files inside this folder. 
- 4. Once that is all running head to http://localhost/authentication/login
+ 1. Create a kubenete cluster by opening gcloud console and writing gcloud container clusters name projectname --zone projectzone 
+ 2. Access kubenete cluster by typing gcloud container clusters get-credentials name projectname --zone projectzone
+ 3. Git clone project folder
+ 4. Deploy gateway service, deployment and conf-map.yaml file to get External IP address for step 5
+ 5. Change the IP in the authenticationservice-deployment file to the External IP of the gateway. 
+ 6. Deploy mongo-service service and deployment files 
+ 7. Repeat the step above for each of the file.  
+ 8. Once all the services and deployments are up and running go to http://gatewayexternalIP/authentication/register
+
+gatewayeternalIP should appear when searching kubectl get service
 
 This should get the project to work successfully. 
 
-Localhost = the ip of the virtual machine
+
