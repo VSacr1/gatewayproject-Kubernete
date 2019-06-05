@@ -11,6 +11,8 @@ As a user you can register for an account online. Once you have registered you s
 ![Serverdiagram](/Serverdiagram.jpg)
 
 From the diagram above we can see how each of the docker files communicate with each other. 
+Servers run on port 3000.
+Clients run on port 8080.
 
 **Gateway**:
 * This runs the nginx.conf file which gives the front and backend their ports 
@@ -36,7 +38,7 @@ From the diagram above we can see how each of the docker files communicate with 
 * *Depends on Account Service, Email Service, Session-token-service* 
 
 **Session Encryption Token**
-*
+* 
 * *Depends on: Aes-Encryption Service, Mongo Service*
 
 **Account Service**: 
