@@ -11,6 +11,7 @@ As a user you can register for an account online. Once you have registered you s
 ![Serverdiagram](/Serverdiagram.jpg)
 
 From the diagram above we can see how each of the docker files communicate with each other. 
+
 Servers run on port 3000.
 Clients run on port 8080.
 
