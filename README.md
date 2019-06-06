@@ -16,7 +16,7 @@ From the diagram above we can see how each of the services communicate with each
 
 **Clients run on port 8080.**
 
-**MongoDB run on port 3000. ** 
+**MongoDB run on port 3000.** 
 
 # 2. How To Run
  **Applications used**
