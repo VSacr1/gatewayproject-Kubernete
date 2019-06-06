@@ -35,11 +35,11 @@ From the diagram above we can see how each of the services communicate with each
  
  4. Git clone project folder
  
- 5. Deploy gateway service, deployment and conf-map.yaml file to get External IP address for step 5
+ 5. Deploy gateway service, deployment and conf-map.yaml file to get External IP address for step 5. Starting with deployment and finishing with service.  
  
  6. Change the IP in the authenticationservice-deployment file to the External IP of the gateway. 
  
- 7. Deploy mongo-service service and deployment files 
+ 7. Starting with deployment and finishing with service; deploy mongo-service service and deployment files 
  
  8. Repeat the step above for each of the file.  
  
