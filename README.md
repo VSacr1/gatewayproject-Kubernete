@@ -45,8 +45,6 @@ From the diagram above we can see how each of the services communicate with each
  
  9. Once all the services and deployments are up and running go to http://gatewayexternalIP/authentication/register
 
-gatewayeternalIP should appear when searching kubectl get service
-
-This should get the project to work successfully. 
+*gatewayeternalIP should appear when searching kubectl get service*
 
 
