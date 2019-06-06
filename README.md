@@ -23,8 +23,8 @@ Clients run on port 8080.
  * MongoDB - Database 
  * Nginx.conf - Web Server
 
-* This application will only function if all the services have been deployed. This is because they all depend on each other to work. 
-* The gateway is used for deploying to an ip address so it is a LoadBalancer due to needing an extenal ip address for users to access. 
+*This application will only function if all the services have been deployed. This is because they all depend on each other to work.*
+*The gateway is used for deploying to an ip address so it is a LoadBalancer due to needing an extenal ip address for users to access.*
 
  **Setup**
  1. Create a kubenete cluster by opening gcloud console and writing gcloud container clusters name projectname --zone projectzone 
