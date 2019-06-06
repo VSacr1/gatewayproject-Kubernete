@@ -12,9 +12,9 @@ As a user you can register for an account online. Once you have registered you s
 
 From the diagram above we can see how each of the services communicate with each other as ClusterIP's, LoadBalancers and Pods. 
 
-Servers run on port 3000.
+**Servers run on port 3000.**
 
-Clients run on port 8080.
+**Clients run on port 8080.**
 
 # 2. How To Run
  **Applications used**
