@@ -10,14 +10,14 @@ As a user you can register for an account online. Once you have registered you s
 
 ![Kubenetediagram](/Kubenetediagram(2).jpg)
 
-From the diagram above we can see how each of the docker files communicate with each other. 
+From the diagram above we can see how each of the services communicate with each other as ClusterIP's, LoadBalancers and Pods. 
 
 Servers run on port 3000.
 
 Clients run on port 8080.
 
 **Gateway**:
-* This runs the nginx.conf file which gives the front and backend their ports. 
+* This runs the nginx.conf file which gives the front and backend their ports. This is deployed as a load balancer due to needing access to an external ip address
 * *Depends on Authentication service, Authentication client Dashboard client*
 
 **Dashboard client** 
