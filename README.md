@@ -4,7 +4,7 @@
 2. [How To Run](#2-How-To-Run)
 
 # 0. Project Definition
-As a user you can register for an account online. Once you have registered you should recieve a confirmation email which will give you a hyperlink to activate your account; allowing you to log in to the dashboard via the login page. This was created using Kubenetes, npm and nginx. 
+As a user you can register for an account online. Once you have registered you should recieve a confirmation email which will give you a hyperlink to activate your account; allowing you to log in to the dashboard via the login page. This was created using Kubenetes, npm and nginx. All the images used for the deployments have been uploaded to a docker.io account
 
 # 1. Architecture 
 
@@ -17,7 +17,7 @@ Servers run on port 3000.
 Clients run on port 8080.
 
 **Gateway**:
-* This runs the nginx.conf file which gives the front and backend their ports 
+* This runs the nginx.conf file which gives the front and backend their ports. 
 * *Depends on Authentication service, Authentication client Dashboard client*
 
 **Dashboard client** 
