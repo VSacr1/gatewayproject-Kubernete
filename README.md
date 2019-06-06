@@ -16,52 +16,15 @@ Servers run on port 3000.
 
 Clients run on port 8080.
 
-**Gateway**:
-* This runs the nginx.conf file which gives the front and backend their ports. This is deployed as a load balancer due to needing access to an external ip address
-* *Depends on Authentication service, Authentication client Dashboard client*
-
-**Dashboard client** 
-*
-
-**Authentication client** 
-* 
-
-**Role Service**
-*
-
-**Group Service**
-*
-
-**Aes Encryption Service**
-* 
-
-**Authentication Service**: 
-* This sends the activation link to the users email. 
-* *Depends on Account Service, Email Service, Session-token-service* 
-
-**Session Encryption Token**
-* 
-* *Depends on: Aes-Encryption Service, Mongo Service*
-
-**Account Service**: 
-* *Depends on: Secret Service, Mongo Service*
-
-**Secret Service**: 
-* *Depends on: Mongo-Service*
-
-**Mongo Service**
-* This is responsible for running and maintaining the mongo database. 
-* *Depends on: Mongo*
-
-**Mongo**
-* This communicates to the Mongo database
-
 # 2. How To Run
  **Applications used**
  * Nodejs - Frontend
  * Vuejs - Frontend
  * MongoDB - Database 
  * Nginx.conf - Web Server
+
+* This application will only function if all the services have been deployed. This is because they all depend on each other to work. 
+* The gateway is used for deploying to an ip address so it is a LoadBalancer due to needing an extenal ip address for users to access. 
 
  **Setup**
  1. Create a kubenete cluster by opening gcloud console and writing gcloud container clusters name projectname --zone projectzone 
